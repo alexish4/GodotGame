@@ -5,5 +5,5 @@
 [node name="KinematicBody2D" type="KinematicBody2D"]
 
 [node name="EnemyBlue1" type="Sprite" parent="."]
-position = Vector2( -12, -10 )
+position = Vector2( 0, -3 )
 texture = ExtResource( 1 )
