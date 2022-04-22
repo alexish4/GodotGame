@@ -1,20 +1,28 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://pexels-felix-mittermeier-957061.jpg" type="Texture" id=2]
+[ext_resource path="res://Enemy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://enemySpawner.gd" type="Script" id=4]
 
-[node name="Node2D" type="Node2D"]
-position = Vector2( 7, 1 )
+[node name="Game" type="Node2D"]
+
+[node name="EnemySpawner" type="Node2D" parent="."]
+visible = false
+position = Vector2( 507, 115 )
+script = ExtResource( 4 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
-margin_left = 3.0
-margin_right = 43.0
+margin_right = 40.0
 margin_bottom = 40.0
-rect_scale = Vector2( 0.17, 0.17 )
 
 [node name="Pexels-felix-mittermeier-957061" type="Sprite" parent="TextureRect"]
-position = Vector2( 3070.59, 1845.45 )
+position = Vector2( 531, 329 )
+scale = Vector2( 0.17, 0.18 )
 texture = ExtResource( 2 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 513, 498 )
+position = Vector2( 524, 513 )
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 3 )]
+position = Vector2( 508, 167 )
