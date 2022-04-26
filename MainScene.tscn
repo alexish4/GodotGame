@@ -17,7 +17,7 @@ margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="Pexels-felix-mittermeier-957061" type="Sprite" parent="TextureRect"]
-position = Vector2( 531, 329 )
+position = Vector2( 520, 328 )
 scale = Vector2( 0.17, 0.18 )
 texture = ExtResource( 2 )
 
@@ -26,3 +26,17 @@ position = Vector2( 524, 513 )
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 3 )]
 position = Vector2( 508, 167 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 0, 656, 0, 0, -160, 0, -160, 640 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2( 1184, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
+polygon = PoolVector2Array( 0, 656, 0, 0, -160, 0, -160, 656 )

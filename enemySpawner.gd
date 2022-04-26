@@ -18,5 +18,5 @@ func _process(delta):
 	time += delta
 	if time > spawn_time:
 		time -+ spawn_time
-		var new_enemy = spawned_enemies.instance()
-		add_child(new_enemy)	
+		#var new_enemy = spawned_enemies.instance()
+		#add_child(new_enemy)	
