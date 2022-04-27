@@ -25,7 +25,7 @@ texture = ExtResource( 2 )
 position = Vector2( 524, 513 )
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 3 )]
-position = Vector2( 508, 167 )
+position = Vector2( 776, 136 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
