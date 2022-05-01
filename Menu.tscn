@@ -1,0 +1,20 @@
+[gd_scene format=2]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Clone" type="Button" parent="."]
+margin_left = 412.0
+margin_top = 122.0
+margin_right = 641.0
+margin_bottom = 241.0
+text = "Clone"
+
+[node name="Variant" type="Button" parent="."]
+anchor_right = 0.384
+margin_left = 416.0
+margin_top = 327.0
+margin_right = 253.784
+margin_bottom = 446.0
+text = "Variant"
