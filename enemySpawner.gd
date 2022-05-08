@@ -1,6 +1,6 @@
 extends Node2D
 
-export (PackedScene) var spawned_enemies
+export (PackedScene) var spawned_object
 export var spawn_time = 5.0
 var time = 0
 # Declare member variables here. Examples:
@@ -17,6 +17,6 @@ func _ready():
 func _process(delta):
 	time += delta
 	if time > spawn_time:
-		time -+ spawn_time
-		#var new_enemy = spawned_enemies.instance()
-		#add_child(new_enemy)	
+		time -= spawn_time
+		var new_thing = spawned_object.instance()
+		add_child(new_thing)

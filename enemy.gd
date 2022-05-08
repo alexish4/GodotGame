@@ -1,16 +1,22 @@
-extends Node
+extends KinematicBody2D
 
+var speed : int = 5000
+var vel : Vector2 = Vector2()
+export var spawn_time = 5.0
+var time = 0
+var time2 = 0
+export var shootTime = 1.5
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+	
+func _physics_process(delta):
+	time += delta
+	if time > spawn_time:
+		time -= spawn_time
+		vel.y += speed
+		move_and_slide(vel, Vector2.UP)
+	time2 += delta
+	if time2 > shootTime:
+		time2 -= shootTime
+		$EnemyLaserWeapon.shoot()
+		
+		

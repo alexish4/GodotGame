@@ -8,9 +8,10 @@
 [node name="Game" type="Node2D"]
 
 [node name="EnemySpawner" type="Node2D" parent="."]
-visible = false
-position = Vector2( 507, 115 )
+use_parent_material = true
+position = Vector2( 72, 150 )
 script = ExtResource( 4 )
+spawned_object = ExtResource( 3 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_right = 40.0
@@ -24,8 +25,8 @@ texture = ExtResource( 2 )
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 524, 513 )
 
-[node name="KinematicBody2D" parent="." instance=ExtResource( 3 )]
-position = Vector2( 776, 136 )
+[node name="Enemy1" parent="." instance=ExtResource( 3 )]
+position = Vector2( 72, 160 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -40,3 +41,15 @@ __meta__ = {
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
 polygon = PoolVector2Array( 0, 656, 0, 0, -160, 0, -160, 656 )
+
+[node name="Enemy2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 760, 160 )
+
+[node name="Enemy3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 928, 160 )
+
+[node name="Enemy4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 296, 160 )
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 3 )]
+position = Vector2( 592, 160 )
