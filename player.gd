@@ -28,3 +28,8 @@ func _physics_process(delta):
 func _unhandled_key_input(event: InputEventKey) -> void:
 	if (event.is_action_pressed("shoot")):
 		$LaserWeapon.shoot()
+
+
+func _on_Hitbox_area_entered(area):
+	if area.is_in_group("EnemyLaser"):
+		print("Player hit")

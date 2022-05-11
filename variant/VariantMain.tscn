@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://variant/vplayer.tscn" type="PackedScene" id=1]
+
+[node name="VariantMain" type="Node2D"]
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 1 )]
