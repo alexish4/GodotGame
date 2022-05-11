@@ -2,6 +2,7 @@ extends Area2D
 
 var direction := Vector2(0, 1)
 var projectile_speed := 1000
+var accessPlayer = load("res://Player.tscn")
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -18,6 +19,8 @@ func _on_VisibilityNotifier2D_viewport_exited(viewport):
 
 func _on_Hurtbox_area_entered(area):
 	if area.is_in_group("Player"): 
-		print("Player fired")
+		print("hit")
+		queue_free()
+		
 		
 
