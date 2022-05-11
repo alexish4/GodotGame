@@ -3,6 +3,7 @@ extends Node2D
 export (PackedScene) var spawned_object
 export var spawn_time = 5.0
 var time = 0
+var enemy = preload("res://Enemy.tscn")
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
