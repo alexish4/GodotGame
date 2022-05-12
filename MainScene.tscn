@@ -127,6 +127,14 @@ texture = ExtResource( 5 )
 position = Vector2( 128.5, 581 )
 texture = ExtResource( 5 )
 
+[node name="Health4" type="Sprite" parent="CanvasLayer/HealthTracker"]
+position = Vector2( 168.5, 581 )
+texture = ExtResource( 5 )
+
+[node name="Health5" type="Sprite" parent="CanvasLayer/HealthTracker"]
+position = Vector2( 208.5, 581 )
+texture = ExtResource( 5 )
+
 [node name="Score" type="RichTextLabel" parent="CanvasLayer"]
 margin_left = 402.0
 margin_right = 660.0

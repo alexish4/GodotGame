@@ -3,7 +3,7 @@ extends Node2D
 
 var enemy = preload("res://Enemy.tscn")
 onready var spawnTimer := $SpawnTimer
-var nextSpawnTime := 5.0
+var nextSpawnTime := 7.0
 
 
 # Called when the node enters the scene tree for the first time.

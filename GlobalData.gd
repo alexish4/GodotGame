@@ -5,6 +5,7 @@ extends Node
 # var a = 2
 # var b = "text"
 var score = 0
+var enemiesKilled = 0
 
 
 # Called when the node enters the scene tree for the first time.

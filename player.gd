@@ -15,7 +15,7 @@ func _ready():
 #func _process(delta):
 #	pass
 var speed : int = 600
-var health : int = 3
+var health : int = 5
 var vel : Vector2 = Vector2()
 func _physics_process(delta):
 	vel.x = 0

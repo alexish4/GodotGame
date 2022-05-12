@@ -21,6 +21,10 @@ func _on_Hurtbox_area_entered(area):
 		var explodeAnimation := tExplosion.instance()
 		explodeAnimation.position = position
 		get_parent().add_child(explodeAnimation)
+		GlobalData.enemiesKilled += 1
+		if GlobalData.enemiesKilled == 10:
+			$"..//../Player".health += 1
+			GlobalData.enemiesKilled = 0
 		GlobalData.score += 100
 		area.get_parent().queue_free()
 		

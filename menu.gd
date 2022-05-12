@@ -22,3 +22,7 @@ func _on_StartGame_pressed():
 	
 func _onVariantGame_pressed():
 	get_tree().change_scene_to(variant)
+
+
+func _on_Clone_pressed():
+	get_tree().change_scene_to(clone)
