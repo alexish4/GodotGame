@@ -9,26 +9,31 @@ var time2 = 0
 var time3 = 0
 var horizontalTime = 1.0
 export var shootTime = 1.5
+var flipBoolean = true
 
 	
 func _physics_process(delta):
 	time += delta
-	print("test")
-	vel.x = horizontalSpeed
+	vel.y = 15
+	if flipBoolean:
+		vel.x = horizontalSpeed
 	if time > spawn_time:
 		time -= spawn_time
-		vel.y += speed
+		#vel.y += speed
 		#vel.x = speed
 	move_and_slide(vel, Vector2.UP)
 	time2 += delta
 	if time2 > shootTime:
 		time2 -= shootTime
 		$EnemyLaserWeapon.shoot()
-		vel.y = 0
-		#vel.x *= -1
+		#vel.y = 0
 	time3 += delta
 	if time3 > horizontalTime:
 		vel.x *= -1
+		if flipBoolean:
+			flipBoolean = false
+		else:
+			flipBoolean = true
 		time3 -= horizontalTime
 		#vel.x = speed
 		

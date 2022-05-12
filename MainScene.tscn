@@ -36,6 +36,30 @@ script = ExtResource( 4 )
 one_shot = true
 script = SubResource( 1 )
 
+[node name="EnemySpawner2" type="Node2D" parent="."]
+position = Vector2( 296, 50 )
+script = ExtResource( 4 )
+
+[node name="SpawnTimer" type="Timer" parent="EnemySpawner2"]
+one_shot = true
+script = SubResource( 1 )
+
+[node name="EnemySpawner3" type="Node2D" parent="."]
+position = Vector2( 632, 50 )
+script = ExtResource( 4 )
+
+[node name="SpawnTimer" type="Timer" parent="EnemySpawner3"]
+one_shot = true
+script = SubResource( 1 )
+
+[node name="EnemySpawner4" type="Node2D" parent="."]
+position = Vector2( 632, 50 )
+script = ExtResource( 4 )
+
+[node name="SpawnTimer" type="Timer" parent="EnemySpawner4"]
+one_shot = true
+script = SubResource( 1 )
+
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
@@ -74,8 +98,8 @@ position = Vector2( 928, 160 )
 [node name="Enemy4" parent="." instance=ExtResource( 3 )]
 position = Vector2( 296, 160 )
 
-[node name="KinematicBody2D" parent="." instance=ExtResource( 3 )]
-position = Vector2( 592, 160 )
+[node name="Enemy5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 632, 160 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -95,3 +119,6 @@ position = Vector2( 128.5, 581 )
 texture = ExtResource( 5 )
 
 [connection signal="timeout" from="EnemySpawner/SpawnTimer" to="EnemySpawner" method="_on_SpawnTimer_timeout"]
+[connection signal="timeout" from="EnemySpawner2/SpawnTimer" to="EnemySpawner2" method="_on_SpawnTimer_timeout"]
+[connection signal="timeout" from="EnemySpawner3/SpawnTimer" to="EnemySpawner3" method="_on_SpawnTimer_timeout"]
+[connection signal="timeout" from="EnemySpawner4/SpawnTimer" to="EnemySpawner4" method="_on_SpawnTimer_timeout"]
