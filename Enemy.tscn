@@ -1,43 +1,16 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://SpaceShooterRedux/PNG/Enemies/enemyBlue1.png" type="Texture" id=1]
-
-[sub_resource type="GDScript" id=1]
-script/source = "extends KinematicBody2D
-
-export(PackedScene) var clone
-export(PackedScene) var variant
-export var speed := 10.0
-export var health: int = 5
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = \"text\"
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-func _on_StartGame_pressed():
-	get_tree().change_scene_to(clone)
-	
-func _onVariantGame_pressed():
-	get_tree().change_scene_to(variant)
-"
+[ext_resource path="res://EnemyLaser.tscn" type="PackedScene" id=2]
+[ext_resource path="res://enemy.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 49.5, 28 )
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
-collision_layer = 4
+collision_layer = 5
 collision_mask = 5
-script = SubResource( 1 )
+script = ExtResource( 3 )
 
 [node name="EnemyBlue1" type="Sprite" parent="."]
 position = Vector2( 0, -3 )
@@ -53,3 +26,11 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2( -0.5, 12 )
 shape = SubResource( 2 )
+
+[node name="EnemyLaserWeapon" parent="." instance=ExtResource( 2 )]
+position = Vector2( -395, -110 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
+[connection signal="viewport_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_viewport_exited"]

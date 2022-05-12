@@ -14,6 +14,10 @@ config/name="CS4700FinalGame"
 run/main_scene="res://MainScene.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+GlobalData="*res://GlobalData.gd"
+
 [input]
 
 shoot={
