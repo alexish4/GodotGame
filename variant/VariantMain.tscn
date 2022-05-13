@@ -15,7 +15,7 @@ position = Vector2( 198, 461 )
 scale = Vector2( 0.7, 0.7 )
 
 [node name="enemy-mage" parent="." instance=ExtResource( 3 )]
-position = Vector2( 310, -25 )
+position = Vector2( 466, 167 )
 scale = Vector2( 0.6, 0.6 )
 
 [node name="enemy-goblin" parent="." instance=ExtResource( 4 )]
