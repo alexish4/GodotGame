@@ -26,7 +26,6 @@ collision_mask = 2
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Laser/Hurtbox"]
 polygon = PoolVector2Array( 69, 57, 80, 58, 75, 104 )
 
-[connection signal="body_shape_entered" from="Laser" to="Laser" method="_on_Laser_body_shape_entered"]
 [connection signal="viewport_exited" from="Laser/VisibilityNotifier2D" to="Laser" method="_on_VisibilityNotifier2D_viewport_exited"]
 [connection signal="area_entered" from="Laser/Hurtbox" to="Laser" method="_on_Hurtbox_area_entered"]
 [connection signal="body_shape_entered" from="Laser/Hurtbox" to="Laser" method="_on_Hurtbox_body_shape_entered"]

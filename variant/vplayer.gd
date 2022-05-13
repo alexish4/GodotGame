@@ -31,3 +31,7 @@ func _physics_process(delta):
 	if Input.is_action_pressed("ui_down"):
 		vel.y += yspeed
 	move_and_slide(vel, Vector2.UP)
+
+func _unhandled_key_input(event: InputEventKey) -> void:
+	if (event.is_action_pressed("shoot")):
+		$PlayerFire.shoot()

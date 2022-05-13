@@ -1,20 +1,19 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://variant/gameart/mages_rework-1.1/PNG/48x64_scale2x/mage-light.png" type="Texture" id=1]
 [ext_resource path="res://playerwalking.tres" type="Animation" id=2]
-[ext_resource path="res://vplayer.gd" type="Script" id=3]
+[ext_resource path="res://variant/vplayer.gd" type="Script" id=3]
+[ext_resource path="res://variant/PlayerFire.tscn" type="PackedScene" id=4]
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
-position = Vector2( 1, 0 )
 script = ExtResource( 3 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2( 72, 78 )
+position = Vector2( -140, -147 )
 scale = Vector2( 0.657861, 0.657861 )
 polygon = PoolVector2Array( 222, 146, 214, 149, 206, 158, 175, 202, 183, 223, 170, 239, 172, 280, 163, 291, 182, 309, 201, 311, 209, 311, 245, 311, 260, 295, 254, 281, 253, 241, 242, 228, 243, 218, 249, 207, 227, 167, 232, 156 )
 
 [node name="Mage-light" type="Sprite" parent="."]
-position = Vector2( 212, 225 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 1 )
 hframes = 3
@@ -27,3 +26,7 @@ anims/walking = ExtResource( 2 )
 [node name="Hurtbox" type="Area2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hurtbox"]
+
+[node name="PlayerFire" parent="." instance=ExtResource( 4 )]
+position = Vector2( -6, -60 )
+scale = Vector2( 0.6, 0.6 )

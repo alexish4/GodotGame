@@ -1,7 +1,5 @@
-extends Control
+extends Node2D
 
-export(PackedScene) var clone
-export(PackedScene) var variant
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -17,9 +15,9 @@ func _ready():
 #func _process(delta):
 #	pass
 
-func _on_Clone_pressed():
-	get_tree().change_scene_to(clone)
+var fire_scene := load("res://variant/PlayerFire.tscn")
 
-
-func _on_Variant_pressed():
-	get_tree().change_scene_to(variant)
+func shoot():
+	var fire = fire_scene.instance()
+	fire.global_position = self.global_position
+	get_node("/root/VariantMain").add_child(fire)
