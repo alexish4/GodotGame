@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://gameart/goblin.png" type="Texture" id=1]
+[ext_resource path="res://variant/enemy-goblin.gd" type="Script" id=2]
 
 [sub_resource type="Animation" id=1]
 resource_name = "goblin-walking"
@@ -19,6 +20,7 @@ tracks/0/keys = {
 }
 
 [node name="enemy-goblin" type="KinematicBody2D"]
+script = ExtResource( 2 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( 245, 149, 251, 149, 252, 151, 255, 147, 270, 147, 273, 150, 276, 149, 281, 149, 281, 154, 272, 166, 278, 171, 279, 178, 280, 178, 281, 183, 277, 186, 272, 185, 272, 190, 278, 198, 249, 198, 254, 194, 253, 189, 255, 186, 248, 186, 245, 180, 247, 178, 247, 171, 254, 165, 247, 155, 245, 154 )
@@ -34,6 +36,9 @@ frame = 3
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Goblin"]
 anims/goblin-walking = SubResource( 1 )
 
-[node name="Hurtbox" type="Area2D" parent="."]
+[node name="Hitbox" type="Area2D" parent="." groups=["Goblins"]]
+collision_layer = 4
+collision_mask = 2
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hurtbox"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hitbox"]
+polygon = PoolVector2Array( 280, 184, 280, 176, 272, 168, 280, 152, 248, 152, 256, 168, 240, 168, 248, 184, 248, 200, 272, 200 )

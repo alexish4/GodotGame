@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/shock.png-084d1ef0c75a99ad049a6917c7d281fa.stex"
+path="res://.import/Heart.png-c81c439a2ad87996d4873fcb7faacf02.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://variant/gameart/shock.png"
-dest_files=[ "res://.import/shock.png-084d1ef0c75a99ad049a6917c7d281fa.stex" ]
+source_file="res://gameart/Heart.png"
+dest_files=[ "res://.import/Heart.png-c81c439a2ad87996d4873fcb7faacf02.stex" ]
 
 [params]
 

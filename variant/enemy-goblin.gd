@@ -15,7 +15,7 @@ var flipBoolean = true
 func _physics_process(delta):
 	time += delta
 	if flipBoolean:
-		vel.x = horizontalSpeed
+		vel.x = -horizontalSpeed
 	if time > spawn_time:
 		time -= spawn_time
 		vel.y += speed
