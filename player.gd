@@ -15,6 +15,7 @@ func _ready():
 #func _process(delta):
 #	pass
 var speed : int = 600
+var health : int = 5
 var vel : Vector2 = Vector2()
 func _physics_process(delta):
 	vel.x = 0
@@ -32,4 +33,6 @@ func _unhandled_key_input(event: InputEventKey) -> void:
 
 func _on_Hitbox_area_entered(area):
 	if area.is_in_group("EnemyLaser"):
-		print("Player hit")
+		health -= 1
+		
+		

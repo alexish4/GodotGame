@@ -1,24 +1,80 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://pexels-felix-mittermeier-957061.jpg" type="Texture" id=2]
 [ext_resource path="res://Enemy.tscn" type="PackedScene" id=3]
 [ext_resource path="res://enemySpawner.gd" type="Script" id=4]
+[ext_resource path="res://SpaceShooterRedux/PNG/UI/playerLife1_blue.png" type="Texture" id=5]
+[ext_resource path="res://HealthTracker.gd" type="Script" id=6]
+[ext_resource path="res://Score.gd" type="Script" id=7]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Timer
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+"
 
 [node name="Game" type="Node2D"]
 
 [node name="EnemySpawner" type="Node2D" parent="."]
-use_parent_material = true
-position = Vector2( 72, 150 )
+position = Vector2( 72, 50 )
 script = ExtResource( 4 )
-spawned_object = ExtResource( 3 )
+
+[node name="SpawnTimer" type="Timer" parent="EnemySpawner"]
+one_shot = true
+script = SubResource( 1 )
+
+[node name="EnemySpawner2" type="Node2D" parent="."]
+position = Vector2( 296, 50 )
+script = ExtResource( 4 )
+
+[node name="SpawnTimer" type="Timer" parent="EnemySpawner2"]
+one_shot = true
+script = SubResource( 1 )
+
+[node name="EnemySpawner3" type="Node2D" parent="."]
+position = Vector2( 592, 50 )
+script = ExtResource( 4 )
+
+[node name="SpawnTimer" type="Timer" parent="EnemySpawner3"]
+one_shot = true
+script = SubResource( 1 )
+
+[node name="EnemySpawner4" type="Node2D" parent="."]
+position = Vector2( 760, 50 )
+script = ExtResource( 4 )
+
+[node name="SpawnTimer" type="Timer" parent="EnemySpawner4"]
+one_shot = true
+script = SubResource( 1 )
+
+[node name="EnemySpawner5" type="Node2D" parent="."]
+position = Vector2( 928, 50 )
+script = ExtResource( 4 )
+
+[node name="SpawnTimer" type="Timer" parent="EnemySpawner5"]
+one_shot = true
+script = SubResource( 1 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="Pexels-felix-mittermeier-957061" type="Sprite" parent="TextureRect"]
-position = Vector2( 520, 328 )
+position = Vector2( 505, 330 )
 scale = Vector2( 0.17, 0.18 )
 texture = ExtResource( 2 )
 
@@ -43,7 +99,7 @@ __meta__ = {
 polygon = PoolVector2Array( 0, 656, 0, 0, -160, 0, -160, 656 )
 
 [node name="Enemy2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 760, 160 )
+position = Vector2( 727, 160 )
 
 [node name="Enemy3" parent="." instance=ExtResource( 3 )]
 position = Vector2( 928, 160 )
@@ -52,4 +108,41 @@ position = Vector2( 928, 160 )
 position = Vector2( 296, 160 )
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 3 )]
-position = Vector2( 592, 160 )
+position = Vector2( 576, 160 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HealthTracker" type="Node" parent="CanvasLayer"]
+script = ExtResource( 6 )
+
+[node name="Health1" type="Sprite" parent="CanvasLayer/HealthTracker"]
+position = Vector2( 48.5, 581 )
+texture = ExtResource( 5 )
+
+[node name="Health2" type="Sprite" parent="CanvasLayer/HealthTracker"]
+position = Vector2( 88.5, 581 )
+texture = ExtResource( 5 )
+
+[node name="Health3" type="Sprite" parent="CanvasLayer/HealthTracker"]
+position = Vector2( 128.5, 581 )
+texture = ExtResource( 5 )
+
+[node name="Health4" type="Sprite" parent="CanvasLayer/HealthTracker"]
+position = Vector2( 168.5, 581 )
+texture = ExtResource( 5 )
+
+[node name="Health5" type="Sprite" parent="CanvasLayer/HealthTracker"]
+position = Vector2( 208.5, 581 )
+texture = ExtResource( 5 )
+
+[node name="Score" type="RichTextLabel" parent="CanvasLayer"]
+margin_left = 402.0
+margin_right = 660.0
+margin_bottom = 60.0
+script = ExtResource( 7 )
+
+[connection signal="timeout" from="EnemySpawner/SpawnTimer" to="EnemySpawner" method="_on_SpawnTimer_timeout"]
+[connection signal="timeout" from="EnemySpawner2/SpawnTimer" to="EnemySpawner2" method="_on_SpawnTimer_timeout"]
+[connection signal="timeout" from="EnemySpawner3/SpawnTimer" to="EnemySpawner3" method="_on_SpawnTimer_timeout"]
+[connection signal="timeout" from="EnemySpawner4/SpawnTimer" to="EnemySpawner4" method="_on_SpawnTimer_timeout"]
+[connection signal="timeout" from="EnemySpawner5/SpawnTimer" to="EnemySpawner5" method="_on_SpawnTimer_timeout"]

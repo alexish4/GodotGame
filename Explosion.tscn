@@ -11,6 +11,7 @@ texture = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="Timer" type="Timer" parent="LaserBlue08"]
+wait_time = 0.25
 one_shot = true
 autostart = true
 
