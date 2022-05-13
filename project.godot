@@ -17,6 +17,7 @@ config/icon="res://icon.png"
 [autoload]
 
 GlobalData="*res://GlobalData.gd"
+Vglobaldata="*res://variant/vglobaldata.gd"
 
 [input]
 

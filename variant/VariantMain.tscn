@@ -11,7 +11,7 @@
 position = Vector2( 1, 2 )
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 1 )]
-position = Vector2( 96, 327 )
+position = Vector2( 198, 461 )
 scale = Vector2( 0.7, 0.7 )
 
 [node name="enemy-mage" parent="." instance=ExtResource( 3 )]
@@ -38,4 +38,22 @@ polygon = PoolVector2Array( 0, 656, 0, 0, -160, 0, -160, 656 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="bottom edge"]
 position = Vector2( -9, 94 )
-polygon = PoolVector2Array( -1, 507, 1072, 506, 1021, 655, 2, 659 )
+polygon = PoolVector2Array( 161, 431, 889, 432, 867, 653, 193, 653 )
+
+[node name="player left bound" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="player left bound"]
+position = Vector2( 19, 0 )
+polygon = PoolVector2Array( 142, 529, 143, 288, 129, 288, 130, 529 )
+
+[node name="player right bound" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="player right bound"]
+position = Vector2( 736, 0 )
+polygon = PoolVector2Array( 142, 529, 143, 288, 129, 288, 130, 529 )
+
+[node name="player top bound" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="player top bound"]
+position = Vector2( 475, -17 )
+polygon = PoolVector2Array( 395, 324, 396, 306, -318, 306, -318, 325 )

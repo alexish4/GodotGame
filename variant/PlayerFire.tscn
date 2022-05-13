@@ -1,15 +1,17 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://variant/gameart/New Piskel (11).png" type="Texture" id=1]
-[ext_resource path="res://Laser.gd" type="Script" id=2]
+[ext_resource path="res://variant/PlayerFireWeapon.gd" type="Script" id=2]
+[ext_resource path="res://variant/PlayerFire.gd" type="Script" id=3]
 
 [node name="PlayerFire" type="Node2D"]
-
-[node name="Fire" type="Area2D" parent="."]
+scale = Vector2( 0.5, 0.5 )
 script = ExtResource( 2 )
 
+[node name="Fire" type="Area2D" parent="."]
+script = ExtResource( 3 )
+
 [node name="Fire" type="Sprite" parent="Fire"]
-position = Vector2( 119, 127 )
 rotation = 4.71239
 texture = ExtResource( 1 )
 offset = Vector2( 24, 6 )
@@ -17,6 +19,7 @@ offset = Vector2( 24, 6 )
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="Fire"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fire"]
+position = Vector2( -120, -126 )
 polygon = PoolVector2Array( 113, 71, 125, 56, 132, 53, 155, 96, 153, 123, 141, 131, 120, 133, 106, 120, 102, 96, 106, 92, 105, 81 )
 
 [node name="Hurtbox" type="Area2D" parent="Fire"]
@@ -24,6 +27,8 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fire/Hurtbox"]
-polygon = PoolVector2Array( 127, 55, 107, 79, 107, 92, 104, 98, 106, 117, 118, 130, 140, 131, 153, 122, 154, 98, 133, 54 )
+position = Vector2( -120, -122 )
+polygon = PoolVector2Array( 127, 55, 107, 79, 104, 98, 106, 117, 118, 130, 140, 131, 153, 122, 154, 98, 133, 54 )
 
-[connection signal="body_shape_entered" from="Fire" to="Fire" method="_on_Laser_body_shape_entered"]
+[connection signal="viewport_exited" from="Fire/VisibilityNotifier2D" to="Fire" method="_on_VisibilityNotifier2D_viewport_exited"]
+[connection signal="area_entered" from="Fire/Hurtbox" to="Fire" method="_on_Hurtbox_area_entered"]
