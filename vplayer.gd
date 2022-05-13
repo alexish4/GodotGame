@@ -14,13 +14,20 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-var speed : int = 600
+var xspeed : int = 600
+var yspeed : int = 300
 var vel : Vector2 = Vector2()
 func _physics_process(delta):
 	vel.x = 0
+	vel.y = 0
 	
 	if Input.is_action_pressed("ui_left"):
-		vel.x -= speed
+		vel.x -= xspeed
 	if Input.is_action_pressed("ui_right"):
-		vel.x += speed
+		vel.x += xspeed
+
+	if Input.is_action_pressed("ui_up"):
+		vel.y -= yspeed
+	if Input.is_action_pressed("ui_down"):
+		vel.y += yspeed
 	move_and_slide(vel, Vector2.UP)
