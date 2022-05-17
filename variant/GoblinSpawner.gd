@@ -18,7 +18,6 @@ func _ready():
 func _on_SpawnTimer_timeout():
 	#Spawn an enemy
 	var enemySpawned = enemy.instance()
-	print("Spawn")
 	enemySpawned.position = Vector2(position.x, position.y)
 	get_tree().current_scene.add_child(enemySpawned)
 	#Restart the timer
