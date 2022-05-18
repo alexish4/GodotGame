@@ -11,12 +11,13 @@ config_version=4
 [application]
 
 config/name="CS4700FinalGame"
-run/main_scene="res://Menu.tscn"
+run/main_scene="res://variant/VariantMain.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 GlobalData="*res://GlobalData.gd"
+Vglobaldata="*res://variant/vglobaldata.gd"
 
 [input]
 

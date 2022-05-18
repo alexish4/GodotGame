@@ -17,12 +17,9 @@ func _ready():
 #func _process(delta):
 #	pass
 
-func _on_StartGame_pressed():
-	get_tree().change_scene_to(clone)
-	
-func _onVariantGame_pressed():
-	get_tree().change_scene_to(variant)
-
-
 func _on_Clone_pressed():
 	get_tree().change_scene_to(clone)
+
+
+func _on_Variant_pressed():
+	get_tree().change_scene_to(variant)
