@@ -1,10 +1,9 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://MainScene.tscn" type="PackedScene" id=1]
 [ext_resource path="res://menu.gd" type="Script" id=2]
 [ext_resource path="res://variant/VariantMain.tscn" type="PackedScene" id=3]
 [ext_resource path="res://SpaceShooterRedux/Backgrounds/purple.png" type="Texture" id=4]
-[ext_resource path="res://peaberryFont.tres" type="DynamicFont" id=5]
 [ext_resource path="res://peaberryBIG.tres" type="DynamicFont" id=6]
 [ext_resource path="res://peaberrySmall.tres" type="DynamicFont" id=7]
 [ext_resource path="res://Credits.tscn" type="PackedScene" id=8]
@@ -62,7 +61,7 @@ margin_bottom = 319.0
 custom_colors/font_color_focus = Color( 1, 0.937255, 0.439216, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 0.937255, 0.439216, 1 )
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = ExtResource( 9 )
 text = "Space Blaster"
 flat = true
 
@@ -72,7 +71,7 @@ margin_top = 80.0
 margin_right = 190.0
 margin_bottom = 112.0
 custom_colors/default_color = Color( 0.505882, 0.882353, 0.968627, 1 )
-custom_fonts/normal_font = ExtResource( 5 )
+custom_fonts/normal_font = ExtResource( 9 )
 visible_characters = 7
 text = "(clone)
 "
@@ -87,7 +86,7 @@ margin_bottom = 447.0
 custom_colors/font_color_focus = Color( 1, 0.937255, 0.439216, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 0.937255, 0.439216, 1 )
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = ExtResource( 9 )
 text = "Mage Master"
 flat = true
 
@@ -98,7 +97,7 @@ margin_right = 208.0
 margin_bottom = 112.0
 rect_pivot_offset = Vector2( 288, 0 )
 custom_colors/default_color = Color( 0.505882, 0.882353, 0.968627, 1 )
-custom_fonts/normal_font = ExtResource( 5 )
+custom_fonts/normal_font = ExtResource( 9 )
 text = "(variant)
 "
 scroll_active = false
