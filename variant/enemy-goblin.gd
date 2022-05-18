@@ -1,9 +1,9 @@
 extends KinematicBody2D
 
-var speed : int = 100
+var speed : int = 200
 var horizontalSpeed : int = 100
 var vel : Vector2 = Vector2()
-export var spawn_time = 5.0
+export var spawn_time = 4.25
 var time = 0
 var time2 = 0
 var time3 = 0
