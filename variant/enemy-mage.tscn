@@ -46,6 +46,7 @@ collision_mask = 2
 polygon = PoolVector2Array( 176, 208, 208, 152, 224, 144, 232, 160, 224, 168, 248, 208, 248, 216, 240, 224, 256, 240, 256, 280, 264, 296, 240, 320, 232, 320, 224, 320, 216, 312, 184, 312, 176, 304, 168, 304, 168, 240, 184, 232 )
 
 [node name="MageShockWeapon" parent="." instance=ExtResource( 2 )]
+position = Vector2( 208, 352 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 
