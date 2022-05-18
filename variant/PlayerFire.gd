@@ -34,7 +34,7 @@ func _on_Hurtbox_area_entered(area):
 		get_parent().add_child(explodeAnimation)
 		Vglobaldata.enemiesKilled += 1
 		if Vglobaldata.enemiesKilled == 10:
-			$"..//../vplayer".health += 1
+			Vglobaldata.health += 1
 			Vglobaldata.enemiesKilled = 0
 		Vglobaldata.score += 200
 		area.get_parent().queue_free()
