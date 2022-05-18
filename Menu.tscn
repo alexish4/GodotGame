@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://MainScene.tscn" type="PackedScene" id=1]
 [ext_resource path="res://menu.gd" type="Script" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://peaberryFont.tres" type="DynamicFont" id=5]
 [ext_resource path="res://peaberryBIG.tres" type="DynamicFont" id=6]
 [ext_resource path="res://peaberrySmall.tres" type="DynamicFont" id=7]
+[ext_resource path="res://Credits.tscn" type="PackedScene" id=8]
+[ext_resource path="res://peaberryfont.tres" type="DynamicFont" id=9]
 
 [sub_resource type="TileSet" id=1]
 0/name = "menu background"
@@ -45,6 +47,7 @@ rect_pivot_offset = Vector2( 736, 464 )
 script = ExtResource( 2 )
 clone = ExtResource( 1 )
 variant = ExtResource( 3 )
+credits = ExtResource( 8 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 1 )
@@ -53,9 +56,9 @@ tile_data = PoolIntArray( 0, 1, 0, 4, 1, 0, 8, 1, 0, 12, 1, 0, 262144, 1, 0, 262
 
 [node name="Clone" type="Button" parent="."]
 margin_left = 384.0
-margin_top = 256.0
+margin_top = 191.0
 margin_right = 640.0
-margin_bottom = 384.0
+margin_bottom = 319.0
 custom_colors/font_color_focus = Color( 1, 0.937255, 0.439216, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 0.937255, 0.439216, 1 )
@@ -78,9 +81,9 @@ scroll_active = false
 [node name="Variant" type="Button" parent="."]
 anchor_right = 0.384
 margin_left = 384.0
-margin_top = 384.0
+margin_top = 319.0
 margin_right = 246.784
-margin_bottom = 512.0
+margin_bottom = 447.0
 custom_colors/font_color_focus = Color( 1, 0.937255, 0.439216, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 0.937255, 0.439216, 1 )
@@ -100,11 +103,23 @@ text = "(variant)
 "
 scroll_active = false
 
+[node name="Credits" type="Button" parent="."]
+margin_left = 386.0
+margin_top = 461.0
+margin_right = 640.0
+margin_bottom = 550.0
+custom_colors/font_color_focus = Color( 1, 0.937255, 0.439216, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 0.937255, 0.439216, 1 )
+custom_fonts/font = ExtResource( 9 )
+text = "Credits"
+flat = true
+
 [node name="title" type="RichTextLabel" parent="."]
 margin_left = 300.0
-margin_top = 144.0
+margin_top = 79.0
 margin_right = 732.0
-margin_bottom = 184.0
+margin_bottom = 119.0
 custom_colors/font_color_selected = Color( 1, 1, 1, 1 )
 custom_fonts/normal_font = ExtResource( 6 )
 text = "MASTER BLASTER"
@@ -122,3 +137,4 @@ scroll_active = false
 
 [connection signal="pressed" from="Clone" to="." method="_on_Clone_pressed"]
 [connection signal="pressed" from="Variant" to="." method="_on_Variant_pressed"]
+[connection signal="pressed" from="Credits" to="." method="_on_Credits_pressed"]
