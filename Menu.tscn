@@ -1,12 +1,12 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://MainScene.tscn" type="PackedScene" id=1]
 [ext_resource path="res://menu.gd" type="Script" id=2]
 [ext_resource path="res://variant/VariantMain.tscn" type="PackedScene" id=3]
 [ext_resource path="res://SpaceShooterRedux/Backgrounds/purple.png" type="Texture" id=4]
-[ext_resource path="res://peaberryfont.tres" type="DynamicFont" id=5]
+[ext_resource path="res://peaberryFont.tres" type="DynamicFont" id=5]
 [ext_resource path="res://peaberryBIG.tres" type="DynamicFont" id=6]
-[ext_resource path="res://peaberry1.tres" type="DynamicFontData" id=7]
+[ext_resource path="res://peaberrySmall.tres" type="DynamicFont" id=7]
 
 [sub_resource type="TileSet" id=1]
 0/name = "menu background"
@@ -37,9 +37,6 @@
 1/shape_one_way_margin = 0.0
 1/shapes = [  ]
 1/z_index = 0
-
-[sub_resource type="DynamicFont" id=2]
-font_data = ExtResource( 7 )
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -119,7 +116,7 @@ margin_top = 560.0
 margin_right = 768.0
 margin_bottom = 584.0
 custom_colors/font_color_selected = Color( 1, 1, 1, 1 )
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = ExtResource( 7 )
 text = "           ©CS4700 Spring '22 Cariaga, Hernandez, Sajjad"
 scroll_active = false
 

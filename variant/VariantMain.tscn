@@ -110,10 +110,10 @@ margin_bottom = 40.0
 script = ExtResource( 10 )
 
 [node name="MainMenu" type="Button" parent="CanvasLayer/Control"]
-margin_left = 840.0
-margin_top = 551.0
-margin_right = 1012.0
-margin_bottom = 588.0
+margin_left = 442.0
+margin_top = 561.0
+margin_right = 614.0
+margin_bottom = 598.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = ExtResource( 9 )
 text = "Main Menu"

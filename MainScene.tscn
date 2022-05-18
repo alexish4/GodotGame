@@ -144,12 +144,12 @@ margin_bottom = 60.0
 custom_fonts/normal_font = ExtResource( 8 )
 script = ExtResource( 7 )
 
-[node name="Control" type="Control" parent="CanvasLayer"]
+[node name="Control" type="Control" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 9 )
 
-[node name="MainMenu" type="Button" parent="CanvasLayer/Control"]
+[node name="MainMenu" type="Button" parent="Control"]
 margin_left = 840.0
 margin_top = 551.0
 margin_right = 1012.0
@@ -164,4 +164,4 @@ flat = true
 [connection signal="timeout" from="EnemySpawner3/SpawnTimer" to="EnemySpawner3" method="_on_SpawnTimer_timeout"]
 [connection signal="timeout" from="EnemySpawner4/SpawnTimer" to="EnemySpawner4" method="_on_SpawnTimer_timeout"]
 [connection signal="timeout" from="EnemySpawner5/SpawnTimer" to="EnemySpawner5" method="_on_SpawnTimer_timeout"]
-[connection signal="pressed" from="CanvasLayer/Control/MainMenu" to="CanvasLayer/Control" method="_on_MainMenu_pressed"]
+[connection signal="pressed" from="Control/MainMenu" to="Control" method="_on_MainMenu_pressed"]
