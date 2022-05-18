@@ -1,6 +1,6 @@
 extends Control
 
-export(PackedScene) var MainMenu
+#export(PackedScene) var MainMenu
 var loadMenu = load("res://Menu.tscn")
 
 func _ready():

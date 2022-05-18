@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://pexels-felix-mittermeier-957061.jpg" type="Texture" id=2]
@@ -8,7 +8,8 @@
 [ext_resource path="res://HealthTracker.gd" type="Script" id=6]
 [ext_resource path="res://Score.gd" type="Script" id=7]
 [ext_resource path="res://peaberryfont.tres" type="DynamicFont" id=8]
-[ext_resource path="res://MenuButton.gd" type="Script" id=9]
+[ext_resource path="res://variant/tunetank.com_3906_space-trip_by_ygvr.mp3" type="AudioStream" id=9]
+[ext_resource path="res://MenuButton.tscn" type="PackedScene" id=10]
 [ext_resource path="res://MainScene.gd" type="Script" id=11]
 
 [sub_resource type="GDScript" id=1]
@@ -146,24 +147,18 @@ margin_bottom = 60.0
 custom_fonts/normal_font = ExtResource( 8 )
 script = ExtResource( 7 )
 
-[node name="Control" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
-script = ExtResource( 9 )
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+volume_db = -10.0
 
-[node name="MainMenu" type="Button" parent="Control"]
-margin_left = 840.0
-margin_top = 551.0
-margin_right = 1012.0
-margin_bottom = 588.0
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_fonts/font = ExtResource( 8 )
-text = "Main Menu"
-flat = true
+[node name="Control" parent="." instance=ExtResource( 10 )]
+margin_left = 847.0
+margin_top = 556.0
+margin_right = 1027.0
+margin_bottom = 599.0
 
 [connection signal="timeout" from="EnemySpawner/SpawnTimer" to="EnemySpawner" method="_on_SpawnTimer_timeout"]
 [connection signal="timeout" from="EnemySpawner2/SpawnTimer" to="EnemySpawner2" method="_on_SpawnTimer_timeout"]
 [connection signal="timeout" from="EnemySpawner3/SpawnTimer" to="EnemySpawner3" method="_on_SpawnTimer_timeout"]
 [connection signal="timeout" from="EnemySpawner4/SpawnTimer" to="EnemySpawner4" method="_on_SpawnTimer_timeout"]
 [connection signal="timeout" from="EnemySpawner5/SpawnTimer" to="EnemySpawner5" method="_on_SpawnTimer_timeout"]
-[connection signal="pressed" from="Control/MainMenu" to="Control" method="_on_MainMenu_pressed"]
