@@ -1,0 +1,111 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://variant/vplayer.tscn" type="PackedScene" id=1]
+[ext_resource path="res://variant/background.tscn" type="PackedScene" id=2]
+[ext_resource path="res://variant/enemy-mage.tscn" type="PackedScene" id=3]
+[ext_resource path="res://variant/enemy-goblin.tscn" type="PackedScene" id=4]
+[ext_resource path="res://gameart/Heart.png" type="Texture" id=5]
+[ext_resource path="res://variant/VHealthTracker.gd" type="Script" id=6]
+[ext_resource path="res://variant/VScore.gd" type="Script" id=7]
+[ext_resource path="res://variant/GoblinSpawner.gd" type="Script" id=8]
+
+[node name="VariantMain" type="Node2D"]
+
+[node name="GoblinSpawner" type="Node2D" parent="."]
+script = ExtResource( 8 )
+
+[node name="SpawnTimer" type="Timer" parent="GoblinSpawner"]
+one_shot = true
+
+[node name="GoblinSpawner2" type="Node2D" parent="."]
+position = Vector2( 500, 0 )
+script = ExtResource( 8 )
+
+[node name="SpawnTimer" type="Timer" parent="GoblinSpawner2"]
+one_shot = true
+
+[node name="TileMap" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1, 2 )
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 568, 464 )
+scale = Vector2( 0.7, 0.7 )
+
+[node name="enemy-mage" parent="." instance=ExtResource( 3 )]
+position = Vector2( 310, -25 )
+scale = Vector2( 0.6, 0.6 )
+
+[node name="enemy-goblin" parent="." instance=ExtResource( 4 )]
+
+[node name="left edge" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="left edge"]
+polygon = PoolVector2Array( 0, 656, 0, 0, -160, 0, -160, 640 )
+
+[node name="right edge" type="StaticBody2D" parent="."]
+position = Vector2( 1184, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="right edge"]
+polygon = PoolVector2Array( 0, 656, 0, 0, -160, 0, -160, 656 )
+
+[node name="bottom edge" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="bottom edge"]
+position = Vector2( -9, 94 )
+polygon = PoolVector2Array( 161, 431, 889, 432, 867, 653, 193, 653 )
+
+[node name="player left bound" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="player left bound"]
+position = Vector2( 19, 0 )
+polygon = PoolVector2Array( 142, 529, 143, 288, 129, 288, 130, 529 )
+
+[node name="player right bound" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="player right bound"]
+position = Vector2( 736, 0 )
+polygon = PoolVector2Array( 142, 529, 143, 288, 129, 288, 130, 529 )
+
+[node name="player top bound" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="player top bound"]
+position = Vector2( 475, -17 )
+polygon = PoolVector2Array( 395, 324, 396, 306, -318, 306, -318, 325 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VHealthTracker" type="Node" parent="CanvasLayer"]
+script = ExtResource( 6 )
+
+[node name="Heart" type="Sprite" parent="CanvasLayer/VHealthTracker"]
+position = Vector2( 40, 568 )
+texture = ExtResource( 5 )
+
+[node name="Heart2" type="Sprite" parent="CanvasLayer/VHealthTracker"]
+position = Vector2( 70, 568 )
+texture = ExtResource( 5 )
+
+[node name="Heart3" type="Sprite" parent="CanvasLayer/VHealthTracker"]
+position = Vector2( 100, 568 )
+texture = ExtResource( 5 )
+
+[node name="Heart4" type="Sprite" parent="CanvasLayer/VHealthTracker"]
+position = Vector2( 130, 568 )
+texture = ExtResource( 5 )
+
+[node name="Heart5" type="Sprite" parent="CanvasLayer/VHealthTracker"]
+position = Vector2( 160, 568 )
+texture = ExtResource( 5 )
+
+[node name="Score" type="RichTextLabel" parent="CanvasLayer"]
+margin_left = 888.0
+margin_top = 536.0
+margin_right = 1016.0
+margin_bottom = 600.0
+script = ExtResource( 7 )
+
+[connection signal="timeout" from="GoblinSpawner/SpawnTimer" to="GoblinSpawner" method="_on_SpawnTimer_timeout"]
+[connection signal="timeout" from="GoblinSpawner2/SpawnTimer" to="GoblinSpawner2" method="_on_SpawnTimer_timeout"]
