@@ -13,7 +13,7 @@ func _process(delta: float) -> void:
 
 
 func _on_Hurtbox_area_entered(area):
-	if area.is_in_group("vplayer"): 
+	if area.is_in_group("Vplayer"): 
 		print("hit")
 		queue_free()
 # Declare member variables here. Examples:
