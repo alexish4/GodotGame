@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://gameart/goblin.png" type="Texture" id=1]
 [ext_resource path="res://variant/enemy-goblin.gd" type="Script" id=2]
+[ext_resource path="res://variant/GoblinArrowWeapon.tscn" type="PackedScene" id=3]
 
 [sub_resource type="Animation" id=1]
 resource_name = "goblin-walking"
@@ -42,3 +43,6 @@ collision_mask = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hitbox"]
 polygon = PoolVector2Array( 280, 184, 280, 176, 272, 168, 280, 152, 248, 152, 256, 168, 240, 168, 248, 184, 248, 200, 272, 200 )
+
+[node name="GoblinArrowWeapon" parent="." instance=ExtResource( 3 )]
+position = Vector2( 208, 176 )
