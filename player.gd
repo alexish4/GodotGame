@@ -19,7 +19,6 @@ var health : int = 5
 var vel : Vector2 = Vector2()
 func _physics_process(delta):
 	vel.x = 0
-	GlobalData.playerPosition = position.x
 	
 	if Input.is_action_pressed("ui_left"):
 		vel.x -= speed

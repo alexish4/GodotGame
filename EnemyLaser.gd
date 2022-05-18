@@ -9,6 +9,10 @@ var accessPlayer = load("res://Player.tscn")
 
 func _process(delta: float) -> void:
 	self.position += direction * projectile_speed * delta
+<<<<<<< HEAD
+=======
+	
+>>>>>>> danica-test
 
 
 
