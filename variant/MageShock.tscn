@@ -22,9 +22,13 @@ vframes = 8
 polygon = PoolVector2Array( -4, -27, 0, -28, 5, -21, 6, -14, 4, -10, 6, -4, 6, 4, 5, 8, 7, 14, 9, 19, 5, 23, 5, 30, -1, 32, -7, 23, -3, 17, -5, 13, -2, 10, -6, 5, -5, 1, -7, -8, -3, -16, -6, -20, -7, -24 )
 
 [node name="Hurtbox" type="Area2D" parent="MageShock" groups=["MageShock"]]
+collision_layer = 6
+collision_mask = 6
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MageShock/Hurtbox"]
 polygon = PoolVector2Array( -8, -25, -4, -28, 1, -29, 6, -22, 7, -14, 5, -9, 6, -5, 7, 1, 7, 8, 10, 19, 6, 24, 6, 29, 0, 33, -8, 23, -3, 18, -5, 12, -4, 9, -6, 6, -6, 1, -8, -8, -4, -15, -7, -19 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
 [connection signal="viewport_exited" from="MageShock/VisibilityNotifier2D" to="MageShock" method="_on_VisibilityNotifier2D_viewport_exited"]
 [connection signal="area_entered" from="MageShock/Hurtbox" to="MageShock" method="_on_Hurtbox_area_entered"]

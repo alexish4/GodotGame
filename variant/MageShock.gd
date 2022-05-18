@@ -18,8 +18,9 @@ func _on_VisibilityNotifier2D_viewport_exited(viewport):
 
 
 func _on_Hurtbox_area_entered(area):
-	if area.is_in_group("Player"): 
+	if area.is_in_group("VPlayer"): 
 		print("hit")
+		Vglobaldata.health -= 1
 		queue_free()
 		
 		

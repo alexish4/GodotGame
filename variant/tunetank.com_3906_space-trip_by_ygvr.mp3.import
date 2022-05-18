@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/tunetank.com_3906_space-trip_by_ygvr.mp3-de3872755fd4087ee9a035dbd4e1517c.mp3str"
+
+[deps]
+
+source_file="res://variant/tunetank.com_3906_space-trip_by_ygvr.mp3"
+dest_files=[ "res://.import/tunetank.com_3906_space-trip_by_ygvr.mp3-de3872755fd4087ee9a035dbd4e1517c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
