@@ -1,0 +1,8 @@
+[gd_resource type="DynamicFont" load_steps=2 format=2]
+
+[sub_resource type="DynamicFontData" id=3]
+font_path = "res://Peaberry Font Family/Peaberry Base/PeaberryBase.ttf"
+
+[resource]
+size = 50
+font_data = SubResource( 3 )
