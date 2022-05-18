@@ -5,4 +5,6 @@ font_path = "res://Peaberry Font Family/Peaberry Base/PeaberryBase.ttf"
 
 [resource]
 size = 50
+outline_size = 5
+outline_color = Color( 0, 0, 0, 1 )
 font_data = SubResource( 3 )
