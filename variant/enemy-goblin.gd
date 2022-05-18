@@ -24,7 +24,7 @@ func _physics_process(delta):
 	time2 += delta
 	if time2 > shootTime:
 		time2 -= shootTime
-		$GoblinAttack.shoot()
+		$GoblinArrowWeapon.shoot()
 		vel.y = 0
 		#vel.x *= -1
 	time3 += delta

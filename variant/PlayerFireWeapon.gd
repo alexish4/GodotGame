@@ -21,3 +21,4 @@ func shoot():
 	var fire = fire_scene.instance()
 	fire.global_position = self.global_position
 	get_node("/root/VariantMain").add_child(fire)
+	$AudioStreamPlayer2D.play()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://pexels-felix-mittermeier-957061.jpg" type="Texture" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://SpaceShooterRedux/PNG/UI/playerLife1_blue.png" type="Texture" id=5]
 [ext_resource path="res://HealthTracker.gd" type="Script" id=6]
 [ext_resource path="res://Score.gd" type="Script" id=7]
+[ext_resource path="res://MainScene.gd" type="Script" id=8]
+[ext_resource path="res://variant/tunetank.com_3906_space-trip_by_ygvr.mp3" type="AudioStream" id=9]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Timer
@@ -28,6 +30,7 @@ func _ready():
 "
 
 [node name="Game" type="Node2D"]
+script = ExtResource( 8 )
 
 [node name="EnemySpawner" type="Node2D" parent="."]
 position = Vector2( 72, 50 )
@@ -140,6 +143,10 @@ margin_left = 402.0
 margin_right = 660.0
 margin_bottom = 60.0
 script = ExtResource( 7 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+volume_db = -10.0
 
 [connection signal="timeout" from="EnemySpawner/SpawnTimer" to="EnemySpawner" method="_on_SpawnTimer_timeout"]
 [connection signal="timeout" from="EnemySpawner2/SpawnTimer" to="EnemySpawner2" method="_on_SpawnTimer_timeout"]
