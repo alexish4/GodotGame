@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/mixkit-fireball-spell-1347.mp3-dab0453e559c6bd2824f3fa0190e935a.mp3str"
+
+[deps]
+
+source_file="res://variant/mixkit-fireball-spell-1347.mp3"
+dest_files=[ "res://.import/mixkit-fireball-spell-1347.mp3-dab0453e559c6bd2824f3fa0190e935a.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

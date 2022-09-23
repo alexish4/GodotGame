@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/lazer-13089.mp3-0479a32b52c83c4b749dbb32a999046a.mp3str"
+
+[deps]
+
+source_file="res://lazer-13089.mp3"
+dest_files=[ "res://.import/lazer-13089.mp3-0479a32b52c83c4b749dbb32a999046a.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
