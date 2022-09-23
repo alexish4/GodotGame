@@ -3,6 +3,8 @@
 Final game using Godot engine.
 Goal is to create a clone and a variant of a classic arcade game, in our case we chose Galaga. 
 
+GAME LINK: https://pandanica.itch.io/master-blaster
+
 Variant must include:
 -A menu system to select between the two variants
 -Sound and Music
